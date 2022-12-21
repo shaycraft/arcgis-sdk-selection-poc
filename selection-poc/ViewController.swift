@@ -7,7 +7,10 @@
 
 import UIKit
 
+import ArcGIS
+
 class ViewController: UIViewController {
+    @IBOutlet weak var mapView: AGSMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
