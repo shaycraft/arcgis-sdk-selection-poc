@@ -13,7 +13,26 @@
 		C78FA36B2953B87E0043C493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78FA3692953B87E0043C493 /* Main.storyboard */; };
 		C78FA36D2953B87F0043C493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78FA36C2953B87F0043C493 /* Assets.xcassets */; };
 		C78FA3702953B87F0043C493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C78FA36E2953B87F0043C493 /* LaunchScreen.storyboard */; };
+		C78FA37A2953B9220043C493 /* ArcGIS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78FA3782953B9220043C493 /* ArcGIS.xcframework */; };
+		C78FA37B2953B9220043C493 /* ArcGIS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C78FA3782953B9220043C493 /* ArcGIS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C78FA37C2953B9220043C493 /* Runtimecore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78FA3792953B9220043C493 /* Runtimecore.xcframework */; };
+		C78FA37D2953B9220043C493 /* Runtimecore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C78FA3792953B9220043C493 /* Runtimecore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C78FA37E2953B9220043C493 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C78FA37B2953B9220043C493 /* ArcGIS.xcframework in Embed Frameworks */,
+				C78FA37D2953B9220043C493 /* Runtimecore.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C78FA3602953B87E0043C493 /* selection-poc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "selection-poc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,8 @@
 		C78FA36C2953B87F0043C493 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C78FA36F2953B87F0043C493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C78FA3712953B87F0043C493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C78FA3782953B9220043C493 /* ArcGIS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ArcGIS.xcframework; path = ../../../Library/SDKs/ArcGIS/Frameworks/ArcGIS.xcframework; sourceTree = "<group>"; };
+		C78FA3792953B9220043C493 /* Runtimecore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Runtimecore.xcframework; path = ../../../Library/SDKs/ArcGIS/Frameworks/Runtimecore.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78FA37A2953B9220043C493 /* ArcGIS.xcframework in Frameworks */,
+				C78FA37C2953B9220043C493 /* Runtimecore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,7 @@
 			children = (
 				C78FA3622953B87E0043C493 /* selection-poc */,
 				C78FA3612953B87E0043C493 /* Products */,
+				C78FA3772953B9220043C493 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +91,15 @@
 			path = "selection-poc";
 			sourceTree = "<group>";
 		};
+		C78FA3772953B9220043C493 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C78FA3782953B9220043C493 /* ArcGIS.xcframework */,
+				C78FA3792953B9220043C493 /* Runtimecore.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +110,7 @@
 				C78FA35C2953B87E0043C493 /* Sources */,
 				C78FA35D2953B87E0043C493 /* Frameworks */,
 				C78FA35E2953B87E0043C493 /* Resources */,
+				C78FA37E2953B9220043C493 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
