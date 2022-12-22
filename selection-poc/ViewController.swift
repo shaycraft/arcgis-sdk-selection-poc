@@ -23,6 +23,16 @@ class ViewController: UIViewController {
         let map = AGSMap(
             basemapStyle: .arcGISTopographic
         )
+        let SERVICE_URL = "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+        
+        let featureLayer: AGSFeatureLayer = {
+            let featureServiceURL = URL(string: SERVICE_URL)!
+            let trailheadsTable = AGSServiceFeatureTable(url: featureServiceURL)
+            return AGSFeatureLayer(featureTable: trailheadsTable)
+        }()
+        map.operationalLayers.add(featureLayer)
+        
+        
         
         mapView.map = map
         
