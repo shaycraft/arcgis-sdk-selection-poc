@@ -10,20 +10,24 @@ import UIKit
 import ArcGIS
 
 class ViewController: UIViewController {
-    @IBOutlet weak var mapView: AGSMapView!
+    let SERVICE_URL = "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+    
+    @IBOutlet weak var mapView: AGSMapView! {
+        didSet {
+            mapView.map = self.setupMap()
+            mapView.setViewpoint(AGSViewpoint(latitude:34.02700, longitude: -118.80500, scale: 72_000))
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        setupMap()
     }
     
-    private func setupMap() {
+    private func setupMap() -> AGSMap {
         let map = AGSMap(
             basemapStyle: .arcGISTopographic
         )
-        let SERVICE_URL = "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
         
         let featureLayer: AGSFeatureLayer = {
             let featureServiceURL = URL(string: SERVICE_URL)!
@@ -32,17 +36,7 @@ class ViewController: UIViewController {
         }()
         map.operationalLayers.add(featureLayer)
         
-        
-        
-        mapView.map = map
-        
-        mapView.setViewpoint(
-            AGSViewpoint(
-                latitude: 34.02700,
-                longitude: -118.80500,
-                scale: 72_000
-            )
-        )
+        return map;
         
     }
     
